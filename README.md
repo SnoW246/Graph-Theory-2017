@@ -107,3 +107,106 @@ CREATE (t1:timeframe {name:"8.00-9.00"}),
  (t12:timeframe {name:"19.00-20.00"}),
  (t13:timeframe {name:"20.00-21.00"}),
  (t14:timeframe {name:"21.00-22.00"})
+==============================================================================
+
+MATCH (c: course), (y:year)
+CREATE (c)-[r:HAS]->(y)
+
+MATCH (a:Person),(b:Person)
+WHERE a.name = 'Node A' AND b.name = 'Node B'
+CREATE (a)-[r:RELTYPE]->(b)
+RETURN r
+
+// Create Relationship between Institute and Department
+MATCH (i:Institute), (dep:Department)
+CREATE (i)-[r:HAS]->(dep)
+
+// Create Relationship between Department and Course
+MATCH (dep:Department), (c:course)
+CREATE (dep)-[r:HAS]->(c)
+
+// Create Relationship between Course and Course Year
+MATCH (c:course), (y:year)
+CREATE (dep)-[r:HAS]->(c)
+
+// Create Relationspip between Year and appropriate Semesters
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-1" AND s.name = "S-1"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-1" AND s.name = "S-2"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-2" AND s.name = "S-3"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-2" AND s.name = "S-4"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-3" AND s.name = "S-5"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-3" AND s.name = "S-6"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-4" AND s.name = "S-7"
+CREATE (y)-[r:HAS]->(s)
+
+MATCH (y:year),(s:semester)
+WHERE y.name = "Year-4" AND s.name = "S-8"
+CREATE (y)-[r:HAS]->(s)
+
+// Create Relationship between Semesters and appropriate Modules
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Graphics Programming"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Data Centric Rad"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Data Representation and Querying"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Object Oriented Programming"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Software Quality Management"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-5" AND m.name = "Operating Systems 1"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Mobile Applications Development 2"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Database Management"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Server Side Rad"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Graph Theory"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Software Testing"
+CREATE (s)-[r:HAS]->(m)
+
+MATCH (s:semester), (m:module)
+WHERE s.name = "S-6" AND m.name = "Profesional Practice in IT"
+CREATE (s)-[r:HAS]->(m)
