@@ -107,7 +107,7 @@ CREATE (t1:timeframe {name:"8.00-9.00"}),
  (t12:timeframe {name:"19.00-20.00"}),
  (t13:timeframe {name:"20.00-21.00"}),
  (t14:timeframe {name:"21.00-22.00"})
-==============================================================================
+_______________________________________________________________________
 
 MATCH (c: course), (y:year)
 CREATE (c)-[r:HAS]->(y)
@@ -210,3 +210,96 @@ CREATE (s)-[r:HAS]->(m)
 MATCH (s:semester), (m:module)
 WHERE s.name = "S-6" AND m.name = "Profesional Practice in IT"
 CREATE (s)-[r:HAS]->(m)
+
+// Create Relationship between Lecturer and the Module
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Damien Costello" AND m.name = "Mobile Applications Development 2"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Deirdre O'Donovan" AND m.name = "Database Management"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Patrick Mannion" AND m.name = "Database Management"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Gerard Harrison" AND m.name = "Server Side Rad"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Ian McLoughlin" AND m.name = "Graph Theory"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Martin Hynes" AND m.name = "Software Testing"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Damien Costello" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Daniel Cregg" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Gerard Harrison" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "John Healy" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Martin Hynes" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Martin Kenirons" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Patrick Mannion" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Brian McGinley" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Ian McLoughlin" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Kevin O'Brien" AND m.name = "Profesional Practice in IT"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Brian McGinley" AND m.name = "Graphics Programming"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Gerard Harrison" AND m.name = "Data Centric Rad"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Ian McLoughlin" AND m.name = "Data Representation and Querying"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "John Healy" AND m.name = "Object Oriented Programming"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Joseph McGinley" AND m.name = "Software Quality Management"
+CREATE (l)-[r:TEACH]->(m)
+
+MATCH (l:lecturer), (m:module)
+WHERE l.name = "Martin Hynes" AND m.name = "Operating Systems 1"
+CREATE (l)-[r:TEACH]->(m)
+
+// Create Relationship between Day and different Timeframes
+MATCH (d:day),(t:timeframe)
+CREATE (d)-[r:AT]->(t)
