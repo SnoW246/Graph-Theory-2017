@@ -303,3 +303,84 @@ CREATE (l)-[r:TEACH]->(m)
 // Create Relationship between Day and different Timeframes
 MATCH (d:day),(t:timeframe)
 CREATE (d)-[r:AT]->(t)
+
+// Create Relationship between Group and Module
+MATCH (g:group), (m:module)
+CREATE (g)-[r:HAS]->(m)
+
+// Create Relationship between Room and all Days
+MATCH (r:room), (d:day)
+CREATE (r)-[rel:ON]->(d)
+
+// Create Relationship between Module and Room
+MATCH (m:module), (r:room)
+WHERE m.name = "Database Management" AND r.name = "994"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Mobile Applications Development 2" AND r.name = "223"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Graph Theory" AND r.name = "PF05"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Software Testing" AND r.name = "481 CR4"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Software Testing" AND r.name = "436 CR5"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Database Management" AND r.name = "481 CR4"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Database Management" AND r.name = "482 CR3"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Mobile Applications Development 2" AND r.name = "470"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Graph Theory" AND r.name = "379"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Graph Theory" AND r.name = "162"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Graph Theory" AND r.name = "938"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Profesional Practice in IT" AND r.name = "208"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Server Side Rad" AND r.name = "997"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Software Testing" AND r.name = "939"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Database Management" AND r.name = "995"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Mobile Applications Development 2" AND r.name = "PF18"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Server Side Rad" AND r.name = "436 CR5"
+CREATE (m)-[rel:IN]->(r)
+
+MATCH (m:module), (r:room)
+WHERE m.name = "Graph Theory" AND r.name = "208"
+CREATE (m)-[rel:IN]->(r)
