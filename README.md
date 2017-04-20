@@ -1,7 +1,56 @@
-# Graph-Theory-2017
-Graph Theory Timetable Project 
+# Introduction 
+### Graph Theory
 
-## Create Commands for nodes in the Software Development course of 2016/2017 school year
+Undergraduate 2017 Project for Graph Theory at Galway-Mayo Institute of Technology. Requirement is to design and prototype a Neo4j Database for use in a timetabling system for a third level institute like [GMIT](https://learnonline.gmit.ie/). 
+
+#### Project Requirements
+1. The database should store information (Student groups, classrooms, lecturers, and work hours – just like the currently used timetabling system at GMIT.
+2. A document detailing the design of the database. (It should clearly state what data needs to be stored by atimetabling system, and how that data is to be represented in the database. This means that design choices about what data are represented as nodes, relationships, labels, relationship types or properties must clearly specified. It should also specify, and give examples of, Cypher queries for creating, retrieving, updating and deleting data.
+3. A prototype Neo4j database following that design and using data from GMIT. (The data can be copied or scraped from GMIT’s timetabling website, or otherwise obtained.)
+4. Seperate section in the design document, outlining how the data have been obtained for the prototipe database.
+
+#### Installation Guide
+1. Install [Neo4j](https://neo4j.com/download/).
+2. Download & unzip this project.
+3. Launch Neo4j & select the database path location of this project.
+4. Username: neo4j Password: neo4j (This may vary, as Neo4j might only ask for your personal informations).
+5. Further [guide](https://neo4j.com/developer/get-started/) and documentation for Neo4j can be found [here](https://neo4j.com/).
+
+# Storing information
+The folowwing data will be stored by Neo4j GMIT timetable database:
+- An Institute.
+- List of Departments in the Institute.
+- List of Courses in individual Departments.
+- List of Years that each Course is broken into. (e.g. 4 Year course will be broken into 4 individual sections)
+- List of Semesters that each Year us broken into. (e.g. 1 Year broken into 2 Semesters, if course is 4 years then there will be 8 semesters all together
+- List of Modules in each individual Semester
+- List of Lecturers teaching individual Modules
+- List of Rooms available for venue bookings
+- List of Groups that can attend the Room with already assigned venue to the module, which is appropriate to course of the groups
+- List of Days that Rooms can be given venues for
+- List of Timeframes that individual Days have that also is part of venue (starting with 8am to 10pm with 1hour timeframes)
+
+Some of the adjustments to individual data are pure speculation sice the timetable could be used by every staff of the Institute, where students dont have an access to that data. e.g. I decided to use timeframe of 8am to 10pm for each day since those are the hours that the college is opened for, therefore it is only natural to speculate that staff members must be in the insitute carrying out some sort of work.
+
+# 1. Initial design of the database
+I have created initial model before the database was created. The model includes basic relationships between the nodes.
+
+![alt tag](https://cloud.githubusercontent.com/assets/15648358/25252159/ddc6c0aa-2613-11e7-9592-d6886ffb1cd9.png)
+
+The above model shows the following relationships that are included in the Neo4J database and go down in the tree hierarchy as follows:
+1. Institute -- HAS --> Departments
+2. Department -- HAS --> Courses
+3. Course -- HAS --> Years
+4. Year -- HAS --> Semesters
+5. Semester -- HAS --> Modules
+6. Teachers -- TEACH --> Modules
+7. Modules -- IN --> Rooms
+8. Groups -- IN --> Rooms
+9. Rooms -- ON --> Days
+10. Days -- AT --> Timeframes
+
+
+#### Create Commands for nodes in the Software Development course of 2016/2017 school year
 // Create Institute node
 CREATE (i:Institute {name:"GMIT"})
 
