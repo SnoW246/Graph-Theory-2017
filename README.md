@@ -35,29 +35,13 @@ Some of the adjustments to individual data are pure speculation sice the timetab
 # 2. Initial design of the database
 I have created initial model before the database was created. The model includes basic relationships between the nodes.
 
-![alt tag](https://cloud.githubusercontent.com/assets/15648358/25252159/ddc6c0aa-2613-11e7-9592-d6886ffb1cd9.png)
+![alt tag](https://cloud.githubusercontent.com/assets/15648358/25286311/34e4915e-26b5-11e7-9f99-cf8eeeafa17c.png)
 
-The above model shows the following data that will be represented in the Neo4J database and go down in the tree hierarchy as follows:
-1. Institute -- HAS --> Departments
-2. Department -- HAS --> Courses
-3. Course -- HAS --> Years
-4. Year -- HAS --> Semesters
-5. Semester -- HAS --> Modules
-6. Teachers -- TEACH --> Modules
-7. Modules -- IN --> Rooms
-8. Groups -- IN --> Rooms
-9. Rooms -- ON --> Days
-10. Days -- AT --> Timeframes
+The screenshot shows my first thoughts about the current timetabling system of GMIT. However my goal was to create a model with entities and appropriate relationships so that it would be easy to understand. It would be very complex to use this model to create a timetable This model can definitely be improved and made more simple. Below is an initial list of Nodes & Relationships: 
+#### Nodes - Institute, Department, Course, Year, Semester, Teacher, Module, Group, Room, Capacity, Week, Day, Timeframe
+#### Relationships - HAS, TEACH, IN, OF, ON, AT
 
-I decided to represent most of the data by nodes in the Neo4j database as some of the relationships made me think it was necessary. 
-Below is a list of Nodes & Relationships: 
-#### Nodes - Institute, Department, Course, Year, Semester, Teacher, Module, Group, Room, Day, Timeframe
-#### Relationships - HAS, TEACH, IN, ON, AT
-
-My goal was to create a model with entities and appropriate relationships so that it would be easy to understand. The person using this model would also need to expand on it since data I have used in this project was only to match one part of Computing in Software Development Course in Galway-Mayo Institute of technology. The decisions I made about the nodes and the relationships were to ensure the the understanding of the model by person making timetable system.
-
-Not all of the data available on [GMIT Timetable System](http://timetable.gmit.ie/) website was used as the model I have created wouldn't be clear to understand and would include too much informations. A lot of infromations all related together, in one way or another, would result in advanced and difficult to understand overall graph therefore I have kept it as simple as possible.
-
+Even when I knew that the model is definitely not in the final form, I started creating the Neo4j database according to the above model.
 ### Bellow are the Cypher queries used to create certain nodes and relationships between them:
 1. #### Create Institute node 
    ###### CREATE (i:Institute {name:"GMIT"})
@@ -92,31 +76,82 @@ Not all of the data available on [GMIT Timetable System](http://timetable.gmit.i
    ###### (m10:module {name:"Object Oriented Programming"}),
    ###### (m11:module {name:"Software Quality Management"}),
    ###### (m12:module {name:"Operating Systems 1"})
-Now that the nodes are created the relationship can be applied. The create node queries can also create the relationship, but I decided to keep the queries simple in case something goes wrong and changes would have to be reverted or changed again.
-7. 
-8. 
+   
+   Now that the nodes are created the relationship can be applied. The create node queries can also create the relationship, but I decided to keep the queries simple in case something goes wrong and changes would have to be reverted or changed again.
+7. ##### Create Relationship between Institute and Department
+   ###### MATCH (i:Institute), (dep:Department) CREATE (i)-[r:HAS]->(dep)
+8. ##### Create Relationship between Department and Course
+   ###### MATCH (dep:Department), (c:course) CREATE (dep)-[r:HAS]->(c)
+9. ##### Create Relationship between Course and Course Year
+   ###### MATCH (c:course), (y:year) CREATE (dep)-[r:HAS]->(c)
+10. ##### Create Relationspip between Year and appropriate Semesters
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-1" AND s.name = "S-1" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-1" AND s.name = "S-2" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-2" AND s.name = "S-3" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-2" AND s.name = "S-4" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-3" AND s.name = "S-5" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-3" AND s.name = "S-6" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-4" AND s.name = "S-7" CREATE (y)-[r:HAS]->(s)
+    ###### MATCH (y:year),(s:semester) WHERE y.name = "Year-4" AND s.name = "S-8" CREATE (y)-[r:HAS]->(s)
+11. ##### Create Relationship between Semesters and appropriate Modules
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Graphics Programming" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Data Centric Rad" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Data Representation and Querying" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Object Oriented Programming" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Software Quality Management" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-5" AND m.name = "Operating Systems 1" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Mobile Applications Development 2" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Database Management" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Server Side Rad" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Graph Theory" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Software Testing" CREATE (s)-[r:HAS]->(m)
+    ###### MATCH (s:semester), (m:module) WHERE s.name = "S-6" AND m.name = "Profesional Practice in IT" CREATE (s)-[r:HAS]->(m)
 
+After creating the above nodes and relationships between them, the Neo4j model should look just like the below screenshot.
+##### If needed one of the following simple Cypher queries can bring it up:
+- ###### MATCH (n) RETURN n
+- ###### MATCH p=()-[r:HAS]->() RETURN p
+![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246152/aa8bb962-25fe-11e7-9460-f87a082a8a2c.png)
+So far the model shows the detailed nodes and relationships created between them, which are correct acording to the initial model.
 
+The person using this model would also need to expand on it since data I have used in this project was only to match one part of Computing in Software Development Course in Galway-Mayo Institute of technology. The decisions I made about the nodes and the relationships were to ensure the the understanding of the model by person making timetable system.
 
+Not all of the data available on [GMIT Timetable System](http://timetable.gmit.ie/) website was used as the model I have created wouldn't be clear to understand and would include too much informations. A lot of infromations all related together, in one way or another, would result in advanced and difficult to understand overall graph therefore I have kept it as simple as possible.
 
+When creating the Neo4j initial model I realised that the database would store too much unncecessary/ duplicate informations. The model turns out to be good enough until the Capacity and Week is encountered in the model. I realised that when i would want to use capacity as an actual node then there would be too many nodes of exact same size number e.g. 22 as almost every room in the Institute should fit a full class in. 
 
+Therfore I decided to not include it at all. The Capacity could be included as a property on each Room. Modules individual groups could then have seperate relationship or relationship property when requesting a room which would be completely up to the person making the timetable. 
+##### Example query could look as follows:
+###### CREATE (r:room {name:"145", capacity:"22"}, (r:room {name:"100", capacity:"19"}
+###### CREATE (g:group {name:"Group-Z", size:"22"}
+###### MATCH (r:room),(g:group) WHERE r.capacity <= g.size RETURN r
+The above query could create 3 nodes (2 rooms with different capacity properties and 1 group with a size property). Match query would searh for all existing rooms and groups where capacity of each room is less than or equal to size of the group. Which should return just the node room with the property name of 145 and capacity of 22.
+
+Then when I thought about the week node and the amount of data that would have to be taken into account, I figured that it is not necessary to have weeks at all. Having weeks would only mean that data will have to be duplicates of one week for the whole semester which increases the size of the database, when it can be shortened and it slows down the queries done on the database. Because of this I changed the initial model and decided to stick with the one below.
+
+![alt tag](https://cloud.githubusercontent.com/assets/15648358/25252159/ddc6c0aa-2613-11e7-9592-d6886ffb1cd9.png)
+
+The above model shows the following data that will be represented in the Neo4J database and go down in the tree hierarchy as follows:
+1. Institute -- HAS --> Departments
+2. Department -- HAS --> Courses
+3. Course -- HAS --> Years
+4. Year -- HAS --> Semesters
+5. Semester -- HAS --> Modules
+6. Teachers -- TEACH --> Modules
+7. Modules -- IN --> Rooms
+8. Groups -- IN --> Rooms
+9. Rooms -- ON --> Days
+10. Days -- AT --> Timeframes
+
+I decided to represent most of the data by nodes in the Neo4j database as some of the relationships made me think it was necessary. 
+Below is a list of Nodes & Relationships: 
+#### Nodes - Institute, Department, Course, Year, Semester, Teacher, Module, Group, Room, Day, Timeframe
+#### Relationships - HAS, TEACH, IN, ON, AT
 
 
 
 
 #### Create Commands for nodes in the Software Development course of 2016/2017 school year
-
-
-
-
-
-
-
-
-
-
-
-
 // Create Lecturer nodes
 CREATE (l1:lecturer {name:"Deirdre O'Donovan"}),
  (l2:lecturer {name:"Gerard Harrison"}),
