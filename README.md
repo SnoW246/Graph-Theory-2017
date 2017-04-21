@@ -307,8 +307,27 @@ Now that the model is finalised and aim is more clear, I created more nodes and 
     Step 10 visual representation of the relationship:
     ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246214/df08a786-25fe-11e7-996a-8f79b81c544b.png)
 
-Finally after step 10 the model is complete acording to finalised model.
+Now the Neo4j database model is finished, matching the model selected to be developed. Below is Neo4j representation of the same model:
 ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246009/3e553bc4-25fe-11e7-847d-8a77d546e211.png)
+To be able to see the relationships in the Neo4J model, I have adjusted individual nodes, which result of can be seen below:
+![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246088/791dde46-25fe-11e7-9db4-2919711ce1f0.png)
 ---
+# 4. How data was obtained
+Data was obtained from GMIT official website. Here are the steps on how they were acquired:
+1. Go to official [GMIT](http://timetable.gmit.ie/) timetable website using google chrome browser.
+2. Selected academic year 2016/2017.
+3. Click on Programmes on the left hand side of the website.
+4. Right-Click on the blank space of that website.
+5. Select "Inspect".
+6. On the right hand side of the website will be inspection menu that pops out after previous action. Select the section of the website there.
+7. Make sure that the whole area of the website or most of it is selected (mainly the table where you can select what are you looking for).
+8. Once done, Right-Click on the highlighted part of the website in the inspection window and select copy & copy outerHTML when the menu expands.
+9. Now open a notepad or any other text editing tool on your machine and paste it there.
+10. Save the file in a directory of your choice.
 
+After the data was obtained, I checked the timetables that Computing in Software Development course had in year 3 and downloaded them as well.
+
+Year 3 Semester 5	![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246417/840f167a-25ff-11e7-8582-0416be13de53.png)
+Year 3 Semester 6	![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246459/a8caecfa-25ff-11e7-9f66-58dc53d49801.png)
+I have only used both of the text files and the actual timetables to create the model with nodes and appropriate names. The files are included in the repository, inside the folder named "Obtained from GMIT".
 
