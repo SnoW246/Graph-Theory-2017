@@ -1,0 +1,569 @@
+<div>
+        &nbsp;
+        <input type="hidden" name="tLinkType" id="tLinkType" value="locations">
+        &nbsp;&nbsp;
+     <!-- INCLUDE the following if you want the Links to go DOWN the page -->   
+     
+     <table width="100%">
+     <tbody><tr>
+     <td class="LinkPanel"> 
+     
+     <!-- END INCLUDE the following if you want the Links to go DOWN the page -->   
+      
+      
+        <div id="pLinkPanel" dir="ltr">
+	<div>
+		<a id="LinkBtn_information" class="LinkButton" href="javascript:__doPostBack('LinkBtn_information','')">&nbsp;16/17 Web Timetable Home&nbsp;</a>
+	</div><div>
+		<a id="LinkBtn_programmesofstudy" class="LinkButton" href="javascript:__doPostBack('LinkBtn_programmesofstudy','')">&nbsp;Programmes&nbsp;</a>
+	</div><div>
+		<a id="LinkBtn_locations" class="LinkButtonSelected" href="javascript:__doPostBack('LinkBtn_locations','')">&nbsp;Rooms&nbsp;</a>
+	</div><div>
+		<a id="LinkBtn_staffbytext" class="LinkButton" href="javascript:__doPostBack('LinkBtn_staffbytext','')">&nbsp;Staff&nbsp;</a>
+	</div>
+</div>
+        
+     <!-- INCLUDE the following if you want the Links to go DOWN the page -->   
+     
+     </td>
+     <td class="FilterPanel" style="width: 59%"> 
+     
+     <!-- END INCLUDE the following if you want the Links to go DOWN the page -->   
+        <div id="pFilterPanel" style="width:100%;">
+	
+            <div id="pFilterTitle" style="width:100%;">
+		
+                <span id="tFilterTitle" class="FilterTitle">16/17 Location Timetables</span>
+                
+	</div>
+            
+            
+            
+            
+            
+            
+                
+            <div id="pWildcard" style="width:100%;">
+		
+                <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel"><span id="lWildcard" class="DepartmentLabel">Location Search String (optional): </span>
+                </td>
+                <td><input name="tWildcard" type="text" id="tWildcard" class="WildcardTextBox">
+                <input type="submit" name="bWildcard" value="Search" id="bWildcard" class="WildcardButton">
+                </td>
+                </tr>
+                </tbody></table>
+             
+	</div>
+            <div id="pObject" style="width:100%;">
+		
+            <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel">
+                 <span id="lObject" class="DepartmentLabel">Select Room(s)</span>
+                
+                </td>
+                <td>
+                <select size="10" name="dlObject" multiple="multiple" id="dlObject" class="DepartmentFilter">
+			<option value="#SPLUS9B0F11">CCAM104 WhiteRm (60)</option>
+			<option value="#SPLUS819021">CCAM107 107 (60)</option>
+			<option value="#SPLUS9B0F0F">CCAM115 FASRm (30)</option>
+			<option value="#SPLUS86AC33">CCAM116 Print 117 (60)</option>
+			<option value="#SPLUS1CCF9A">CCAM117 Print (60)</option>
+			<option value="#SPLUSD24B4F">CCAM120 PrintWS (20)</option>
+			<option value="#SPLUSD24B50">CCAM121 PrintWS (20)</option>
+			<option value="#SPLUS1CCF9B">CCAM122 PrintWS (60)</option>
+			<option value="#SPLUSD24B51">CCAM123 PrintWS (20)</option>
+			<option value="#SPLUS1CCF9C">CCAM124 PrintWS (60)</option>
+			<option value="#SPLUSD24B52">CCAM125 PrintWS (20)</option>
+			<option value="#SPLUS55018F">CCAM126 PrintWS (60)</option>
+			<option value="#SPLUS9C1220">CCAM127a Sculpt127 (60)</option>
+			<option value="#SPLUS55017E">CCAM136 SculptWS (60)</option>
+			<option value="#SPLUSD24B53">CCAM136a SculptWS (60)</option>
+			<option value="#SPLUSD24B54">CCAM141 CeramSt (60)</option>
+			<option value="#SPLUS550187">CCAM141 CeramWS (60)</option>
+			<option value="#SPLUSB8A172">CCAM141 CeramWS (60)</option>
+			<option value="#SPLUSD24B55">CCAM142 WoodWS (60)</option>
+			<option value="#SPLUSD24B56">CCAM148 GreenRm (60)</option>
+			<option value="#SPLUS50502F">CCAM148 OrangeRm (60)</option>
+			<option value="#SPLUSD24B57">CCAM150 Chapel (60)</option>
+			<option value="#SPLUSB8A173">CCAM158 ceramTR (20)</option>
+			<option value="#SPLUSDF3F04">CCAM162 WellpkRm (60)</option>
+			<option value="#SPLUSC3F423">CCAM163 WellpkRm (60)</option>
+			<option value="#SPLUSD24B59">CCAM209 Studio (60)</option>
+			<option value="#SPLUSD24B5A">CCAM210 Studio (60)</option>
+			<option value="#SPLUSD24B5B">CCAM211 Studio (60)</option>
+			<option value="#SPLUSD24B5C">CCAM212 Studio (60)</option>
+			<option value="#SPLUS550174">CCAM213 (60)</option>
+			<option value="#SPLUS550175">CCAM214 Studio (60)</option>
+			<option value="#SPLUS550176">CCAM218 Studio (60)</option>
+			<option value="#SPLUS9D640A">CCAM219 RedRm (60)</option>
+			<option value="#SPLUS550149">CCAM220 RedRm (60)</option>
+			<option value="#SPLUS550177">CCAM221 Studio (60)</option>
+			<option value="#SPLUS550178">CCAM222 Studio (60)</option>
+			<option value="#SPLUS550179">CCAM223 Studio Space (60)</option>
+			<option value="#SPLUS5CE599">CCAM225 Post Grad (60)</option>
+			<option value="#SPLUS550193">CCAM228 Studio (60)</option>
+			<option value="#SPLUS550194">CCAM229 Studio (60)</option>
+			<option value="#SPLUS550195">CCAM230 Studio (60)</option>
+			<option value="#SPLUS9B0F0C">CCAM233 ComputerLab (60)</option>
+			<option value="#SPLUSD24B5D">CCAM234 ComputerLab (60)</option>
+			<option value="#SPLUS86AC35">CCAM235 EdSuite1 (60)</option>
+			<option value="#SPLUSDF3F03">CCAM236 EdSuite2 (60)</option>
+			<option value="#SPLUS86AC36">CCAM237 EdSuite3 (60)</option>
+			<option value="#SPLUSD24B5E">CCAM242 PhotoPrint (60)</option>
+			<option value="#SPLUSD24B5F">CCAM243 PhotoPrint (60)</option>
+			<option value="#SPLUS9B0F21">CCAM244 Lab 2 (60)</option>
+			<option value="#SPLUSE8D801">CCAM253 BlackRm (60)</option>
+			<option value="#SPLUSD24B60">CCAM254 DarkRm (60)</option>
+			<option value="#SPLUSD24B61">CCAM255 PrintStore (60)</option>
+			<option value="#SPLUSE8D804">CCAM256 Sound (60)</option>
+			<option value="#SPLUSBECA77">CCAM257 Sound257 (60)</option>
+			<option value="#SPLUSD24B62">CCAM258 Sound257 (60)</option>
+			<option value="#SPLUS9B0F13">CCAM261 BlueRm (25)</option>
+			<option value="#SPLUSD24B63">CCAM262 ComLab1 (60)</option>
+			<option value="#SPLUSE8D802">CCAM263 ComLab1 (60)</option>
+			<option value="#SPLUSD24B64">CCAM300 MeetRm (60)</option>
+			<option value="#SPLUS9B0F20">CCAM301 Studio (60)</option>
+			<option value="#SPLUSD24B65">CCAM302 Studio (60)</option>
+			<option value="#SPLUSD24B66">CCAM303 Studio (60)</option>
+			<option value="#SPLUSD24B67">CCAM304 Studio (60)</option>
+			<option value="#SPLUSD24B68">CCAM305 Studio (60)</option>
+			<option value="#SPLUSD24B69">CCAM306 Studio (60)</option>
+			<option value="#SPLUSD24B6A">CCAM307 Studio (60)</option>
+			<option value="#SPLUSD24B6B">CCAM308 Studio (60)</option>
+			<option value="#SPLUS49E1E2">CCAM309 TextileWS (60)</option>
+			<option value="#SPLUSCA5E48">CCAM309 TextileWS (60)</option>
+			<option value="#SPLUSD24B6C">CCAM310 TextileLab (60)</option>
+			<option value="#SPLUSD24B6D">CCAM311 TextileLab (60)</option>
+			<option value="#SPLUSD24B6E">CCAM312 TextileLab (60)</option>
+			<option value="#SPLUS54FF99">CCAM317a Studio (60)</option>
+			<option value="#SPLUSD24B6F">CCAM317b Studio (60)</option>
+			<option value="#SPLUSD24B70">CCAM317c Studio (60)</option>
+			<option value="#SPLUSD24B71">CCAM317d Studio (60)</option>
+			<option value="#SPLUSD24B72">CCAM317e Paint317 (60)</option>
+			<option value="#SPLUSD24B73">CCAM317f Paint317 (60)</option>
+			<option value="#SPLUSD24B74">CCAM320 Ceram (60)</option>
+			<option value="#SPLUS550196">CCAM321 Studio (60)</option>
+			<option value="#SPLUSD91677">CCAM322 Studio (60)</option>
+			<option value="#SPLUSD91678">CCAM323 Studio (60)</option>
+			<option value="#SPLUS550182">CCAM324 Studio (60)</option>
+			<option value="#SPLUS550183">CCAM325 Studio (60)</option>
+			<option value="#SPLUS550184">CCAM326 Studio (60)</option>
+			<option value="#SPLUSE8D803">CCAM344 LifeRm (60)</option>
+			<option value="#SPLUSD91672">CCAM345 Studio (60)</option>
+			<option value="#SPLUSD91673">CCAM346 Studio (60)</option>
+			<option value="#SPLUSD91674">CCAM347 Studio (60)</option>
+			<option value="#SPLUSD91675">CCAM348 Studio (60)</option>
+			<option value="#SPLUSD91676">CCAM349 Studio (60)</option>
+			<option value="#SPLUS550190">CCAM350 Studio (60)</option>
+			<option value="#SPLUS550191">CCAM351 Studio (60)</option>
+			<option value="#SPLUS550192">CCAM352 Studio (60)</option>
+			<option value="#SPLUSD24B75">CCAM401 WeaveRm (60)</option>
+			<option value="#SPLUS55018C">CCAM402 TextileSt (60)</option>
+			<option value="#SPLUS9B0F1C">CCAMCeram107 (15)</option>
+			<option value="#SPLUS54FF98">CCAMHall-A (20)</option>
+			<option value="#SPLUS550129">CCAMHall-B (20)</option>
+			<option value="#SPLUS1CCF97">CCAMHall-C (20)</option>
+			<option value="#SPLUS9B0F15">CCAMPF1 Prefab1 (50)</option>
+			<option value="#SPLUS9B0F16">CCAMPF2 Prefab2 (20)</option>
+			<option value="#SPLUS9B0F17">CCAMPF3 Prefab3 (20)</option>
+			<option value="#SPLUS9B0F18">CCAMPF4 Prefab4 (50)</option>
+			<option value="#SPLUS55017D">CCAMSculpt127 (60)</option>
+			<option value="Connacht Hotel">Connacht Hotel (50)</option>
+			<option value="PF02">G Prefab 02 (18)</option>
+			<option value="PF03">G Prefab 03 (22)</option>
+			<option value="PF04">G Prefab 04 (22)</option>
+			<option value="PF05">G Prefab 05 (33)</option>
+			<option value="PF06">G Prefab 06 (20)</option>
+			<option value="PF07">G Prefab 07 (48)</option>
+			<option value="PF08">G Prefab 08 (18)</option>
+			<option value="PF09">G Prefab 09 (18)</option>
+			<option value="PF10">G Prefab 10 Exam Room (65)</option>
+			<option value="PF18">G Prefab 18 (25)</option>
+			<option value="#SPLUS4F9617">G Reception Foyer New Building (200)</option>
+			<option value="#SPLUSD83C43">G0130 Hydraulics Lab (18)</option>
+			<option value="131">G0131 Dissection Lab (30)</option>
+			<option value="0141">G0141 AMT Lab (24)</option>
+			<option value="0143">G0143 Eng Sci Lab (20)</option>
+			<option value="0145">G0145 (28)</option>
+			<option value="0148">G0148 Concrete Lab (16)</option>
+			<option value="#SPLUSD83C44">G0150 Civil Structures Lab (12)</option>
+			<option value="0130">G0152 Environmental Lab (12)</option>
+			<option value="0153">G0153 (38)</option>
+			<option value="0154">G0154 (38)</option>
+			<option value="0156">G0156 (38)</option>
+			<option value="0157">G0157 (38)</option>
+			<option value="0158">G0158 (38)</option>
+			<option value="0159">G0159 (38)</option>
+			<option value="0162">G0162 (30)</option>
+			<option value="0165">G0165 (83)</option>
+			<option value="0208">G0208 (80)</option>
+			<option value="0209">G0209 (56)</option>
+			<option value="0210">G0210 Nimbus Lab (22)</option>
+			<option value="0213b">G0213b Burren Lab (21)</option>
+			<option value="0215">G0215 Arann Lab (27)</option>
+			<option value="0217">G0217 Corrib Lab (29)</option>
+			<option value="0223">G0223 (80)</option>
+			<option value="0224">G0224 Computer and CAD Lab (28)</option>
+			<option value="0225">G0225 Civil Eng Project Room (24)</option>
+			<option value="0226">G0226 Project Room (24)</option>
+			<option value="0227">G0227 Computer and CAD Lab (31)</option>
+			<option value="0228">G0228 Architectual Studio (32)</option>
+			<option value="0229">G0229 Project Room (24)</option>
+			<option value="0230">G0230 Project Room (24)</option>
+			<option value="0231b">G0231b (40)</option>
+			<option value="0301">G0301 Aquatic Ecology Lab (16)</option>
+			<option value="formally room 382">G0304 CR6 - General Science Lab (24)</option>
+			<option value="0306">G0306 Biology Lab (18)</option>
+			<option value="0309">G0309 Biology Lab (20)</option>
+			<option value="0310">G0310 Biology Lab (20)</option>
+			<option value="0315">G0315a Physicst Lab (16)</option>
+			<option value="#SPLUS558976">G0315b Physicst Lab (16)</option>
+			<option value="#SPLUS558977">G0315c Physicst Lab (16)</option>
+			<option value="0318">G0318 Aquatic Science Lab (18)</option>
+			<option value="#SPLUSB6DD22">G0347 Exam Room (85)</option>
+			<option value="0351">G0351 (20)</option>
+			<option value="0364">G0364 (57)</option>
+			<option value="0365">G0365 (57)</option>
+			<option value="0366">G0366 (57)</option>
+			<option value="0367">G0367a (2)</option>
+			<option value="#SPLUS809F89">G0367b (2)</option>
+			<option value="0368">G0368 (38)</option>
+			<option value="0369">G0369 (38)</option>
+			<option value="0370">G0370 (38)</option>
+			<option value="0373">G0373 (39)</option>
+			<option value="0374">G0374 (47)</option>
+			<option value="0375">G0375 (32)</option>
+			<option value="0376">G0376 (35)</option>
+			<option value="0377">G0377 (35)</option>
+			<option value="0378">G0378 (45)</option>
+			<option value="0379">G0379 (35)</option>
+			<option value="0380">G0380 (42)</option>
+			<option value="0402">G0402 Biochemistry Lab (18)</option>
+			<option value="0405">G0405 Biochem/Chemistry Lab (18)</option>
+			<option value="0411">G0411 Chromotography Lab (20)</option>
+			<option value="0422">G0422 Electro Chem Lab (18)</option>
+			<option value="0436">G0436 CR5 (25)</option>
+			<option value="0450">G0450 Grey Lab (16)</option>
+			<option value="0451">G0451 Microbiology Lab (18)</option>
+			<option value="0470">G0470 Computing Practical Lab (35)</option>
+			<option value="0471">G0471 Med Lab (18)</option>
+			<option value="0475">G0475 Molecular Biology Lab (24)</option>
+			<option value="0476">G0476 Food Science Lab/Wine Room (16)</option>
+			<option value="0478">G0478 Green Lab (24)</option>
+			<option value="0479">G0479 Blue Lab (24)</option>
+			<option value="0480">G0480 CR7 (24)</option>
+			<option value="0481">G0481 CR4 (21)</option>
+			<option value="0482">G0482 CR3 (25)</option>
+			<option value="0483">G0483 CR2 (22)</option>
+			<option value="0484">G0484 CR1 (20)</option>
+			<option value="0501">G0501 Electronic CAD Lab (24)</option>
+			<option value="0502">G0502 Physics Lab (20)</option>
+			<option value="#SPLUS239236">G0506 Computer Lab (20)</option>
+			<option value="0507">G0507 Computer Lab (16)</option>
+			<option value="0508">G0508 Computer Lab (20)</option>
+			<option value="0511">G0511 Lab (16)</option>
+			<option value="0527">G0526/7 City of Galway Training Rest &amp; Bar (50)</option>
+			<option value="#SPLUSC5A9A5">G0526/7 IQ Bar (50)</option>
+			<option value="0550">G0550 Unit 6 (16)</option>
+			<option value="0552">G0552 Demo Theatre (110)</option>
+			<option value="0559">G0559 Unit 8 Pastry Kitchen (16)</option>
+			<option value="0560">G0560 Accommodation and Front Office Suite (32)</option>
+			<option value="0602">G0602 Chemistry Lab (20)</option>
+			<option value="0603">G0603 Lab (20)</option>
+			<option value="0610">G0610 Organic Chemistry Lab (18)</option>
+			<option value="0615">G0615 Unit 9 (20)</option>
+			<option value="0616">G0616 Unit 1 (16)</option>
+			<option value="0623">G0623 Unit 3 (16)</option>
+			<option value="0625">G0625 Unit 4 (16)</option>
+			<option value="0626">G0626 Unit 5 (16)</option>
+			<option value="0629">G0629 Microbiology Lab (18)</option>
+			<option value="#SPLUS718FD5">G0632 Retail Lab (20)</option>
+			<option value="0637">G0637 Unit 10 (16)</option>
+			<option value="0701/0704">G0701 Physics Lab (18)</option>
+			<option value="0702/0703">G0702 Physics Lab (18)</option>
+			<option value="#SPLUSFAE0CD">G0703 Physics Lab (8)</option>
+			<option value="#SPLUSFAE0CC">G0704 Physics Lab (8)</option>
+			<option value="0707">G0707 CAD/CAM Lab (24)</option>
+			<option value="0724b">G0724b W/S (20)</option>
+			<option value="0724c">G0724C W/S CNC/Pen Factory (50)</option>
+			<option value="0724d">G0724d Energy Fluid Lab (50)</option>
+			<option value="0728a">G0728a Garage (24)</option>
+			<option value="0731">G0731 Wiring and Motor Control Installation Workshop (16)</option>
+			<option value="0736">G0736 Electrical and Electronic Projects Lab (16)</option>
+			<option value="0813">G0813 Computer Lab/PBL (20)</option>
+			<option value="0827">G0827 Electronics Lab (20)</option>
+			<option value="0828">G0828 Electronics Lab (20)</option>
+			<option value="0830a">G0830 Electronics Lab (20)</option>
+			<option value="0832">G0832 Electronics Lab (20)</option>
+			<option value="0834">G0834 Computer Lab/PBL (23)</option>
+			<option value="0835">G0835 Info Technology Computer Lab (20)</option>
+			<option value="0837">G0837 (81)</option>
+			<option value="0841">G0841 Wine Geese Training Bar (100)</option>
+			<option value="0842">G0842 Connemara Upstairs Training Rest (50)</option>
+			<option value="0843">G0843 Unit 12 (16)</option>
+			<option value="0903">G0903 (250)</option>
+			<option value="0907">G0907 Language Lab (20)</option>
+			<option value="0910">G0910 Language Lab (20)</option>
+			<option value="0938">G0938 (60)</option>
+			<option value="0939">G0939 (90)</option>
+			<option value="0940">G0940 (90)</option>
+			<option value="0941">G0941 (150)</option>
+			<option value="0994">G0994 (150)</option>
+			<option value="0995">G0995 (90)</option>
+			<option value="0996">G0996 (90)</option>
+			<option value="0997">G0997 (60)</option>
+			<option value="1000">G1000 Blue Theatre (288)</option>
+			<option value="1031">G1031 (34)</option>
+			<option value="1032">G1032 (34)</option>
+			<option value="1033">G1033 (34)</option>
+			<option value="1034">G1034 (34)</option>
+			<option value="1035">G1035 (34)</option>
+			<option value="1036a">G1036 (30)</option>
+			<option value="1039">G1039 (60)</option>
+			<option value="1041">G1041 Video Conference Room (60)</option>
+			<option value="#SPLUS17826C">LETT Computer Lab 1 (50)</option>
+			<option value="#SPLUS17826D">LETT Computer Lab 2 (50)</option>
+			<option value="#SPLUS17826E">LETT Design Studio 1 (50)</option>
+			<option value="#SPLUS17826F">LETT Design Studio 2 (50)</option>
+			<option value="#SPLUS178270">LETT Design Studio 3 (50)</option>
+			<option value="#SPLUS178262">LETT Lecture Theatre 1 (50)</option>
+			<option value="#SPLUS178263">LETT Lecture Theatre 2 (50)</option>
+			<option value="#SPLUS178264">LETT Lecture Theatre 3 (50)</option>
+			<option value="#SPLUS178265">LETT Lecture Theatre 4 (50)</option>
+			<option value="#SPLUS178266">LETT Lecture Theatre 5 (50)</option>
+			<option value="#SPLUS17826A">LETT Machine Hall 1A (50)</option>
+			<option value="#SPLUS5554B1">LETT Machine Hall 1B (50)</option>
+			<option value="#SPLUS17826B">LETT Machine Hall 2 (50)</option>
+			<option value="#SPLUS178267">Letterfrack Bench Room 1 (50)</option>
+			<option value="#SPLUS178268">Letterfrack Bench Room 2 (50)</option>
+			<option value="CL-B117-Unix">MayoCL-B117-Unix (25)</option>
+			<option value="CL-B208-cl4">MayoCL-B208-cl4 (25)</option>
+			<option value="CL-Net">MayoCL-Net (28)</option>
+			<option value="CL-R202-CAD">MayoCL-R202-CAD (25)</option>
+			<option value="CL-Y100-cl6">MayoCL-Y100-cl6 (25)</option>
+			<option value="CL-Y103-cl5">MayoCL-Y103-cl5 (25)</option>
+			<option value="CL-Y200-cl2">MayoCL-Y200-cl2 (25)</option>
+			<option value="CL-Y201-cl1">MayoCL-Y201-cl1 (25)</option>
+			<option value="Lab-B017-CH">MayoLab-B017-CH (40)</option>
+			<option value="Lab-G102-Digmes">MayoLab-G102-Digmes (30)</option>
+			<option value="Lab-R200-DO">MayoLab-R200-DO (40)</option>
+			<option value="Lab-Y017-A3">MayoLab-Y016-A3 (18)</option>
+			<option value="Lab-Y017-A1">MayoLab-Y017-A1 (18)</option>
+			<option value="Lab-Y018-A2">MayoLab-Y018-A2 (18)</option>
+			<option value="MR-P106-Board">MayoMR-P106-Board (30)</option>
+			<option value="NLab-P011-Anat">MayoNLab-P011-Anat (40)</option>
+			<option value="NLab-P102-Taffe">MayoNLab-P102-Taffe (48)</option>
+			<option value="NLab-P104">MayoNLab-P104-student room (8)</option>
+			<option value="NLab-P105-living">MayoNLab-P105-living (28)</option>
+			<option value="NLab-P204-VHen">MayoNLab-P204-VHen (20)</option>
+			<option value="NLab-Y011-N/Gale">MayoNLab-Y011-N/Gale (48)</option>
+			<option value="#SPLUSB0A2FE">Mayo-Pool (1000)</option>
+			<option value="SR-B003-MB">MayoSR-B003-MB (45)</option>
+			<option value="SR-B027">MayoSR-B027 (17)</option>
+			<option value="SR-B030 (sr09)">MayoSR-B030 (sr09) (40)</option>
+			<option value="SR-B120-(sr12)">MayoSR-B120-(sr12) (30)</option>
+			<option value="SR-B121 (sr10)">MayoSR-B121 (sr10) (60)</option>
+			<option value="SR-B122- Lang">MayoSR-B122- Lang (15)</option>
+			<option value="SR-G104-(sr8)">MayoSR-G104-(sr8) (60)</option>
+			<option value="SR-P002-Clear">MayoSR-P002-Clear (120)</option>
+			<option value="SR-P004-Horan">MayoSR-P004-Horan (32)</option>
+			<option value="SR-P005-Healy">MayoSR-P005-Healy (29)</option>
+			<option value="SR-P009-McManus">MayoSR-P009-McManus (30)</option>
+			<option value="SR-P110-Pinel">MayoSR-P110-Pinel (48)</option>
+			<option value="SR-P114-OCar">MayoSR-P114-OCar (60)</option>
+			<option value="SR-P201-Erris">MayoSR-P201-Erris (20)</option>
+			<option value="SR-R104-Davitt">MayoSR-R104-Davitt (80)</option>
+			<option value="SR-Y002-(sr1)">MayoSR-Y002-(sr1) (35)</option>
+			<option value="SR-Y007-(sr14)">MayoSR-Y007-(sr14) (18)</option>
+			<option value="SR-Y104-(sr16)">MayoSR-Y104-(sr16) (30)</option>
+			<option value="SR-Y106-(sr15)">MayoSR-Y106-(sr15) (18)</option>
+			<option value="SR-Y108-Browne">MayoSR-Y108-Browne (80)</option>
+			<option value="#SPLUSC533B6">MayoSt Marys Hall (25)</option>
+			<option value="#SPLUSE79FAD">NUIG (20)</option>
+			<option value="NUIG">NUIG (20)</option>
+
+		</select>
+                </td>
+                </tr>
+                </tbody></table>    
+               
+               
+	</div>
+            
+            
+            
+            
+            
+            
+            
+            <div id="pWeeks" style="width:100%;">
+		
+            <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel">
+                <span id="lWeeks" class="DepartmentLabel">Select Week(s):</span>
+                </td>
+                <td>
+                <select size="5" name="lbWeeks" multiple="multiple" id="lbWeeks" class="DepartmentFilter">
+			<option selected="selected" value="t">This Week</option>
+			<option value="n">Next Week</option>
+			<option value="p">Last Week</option>
+			<option value="4;5;6;7;8;9;10;11;12;13;14;15;16">Autumn/Winter - September to December 2016</option>
+			<option value="22;23;24;25;26;27;28;29;30;31;32;33;36">Spring/Summer - January 2017 to June 2017</option>
+			<option value="4;5;6;7;8;9;10;11;12;13;14;15;16;22;23;24;25;26;27;28;29;30;31;32;33;36">Year Long - September 2016 to June 2017</option>
+			<option value=" 1">wk  1 w/c 22 Aug 2016</option>
+			<option value=" 2">wk  2 w/c 29 Aug 2016</option>
+			<option value=" 3">wk  3 w/c 05 Sep 2016</option>
+			<option value=" 4">wk  4 w/c 12 Sep 2016</option>
+			<option value=" 5">wk  5 w/c 19 Sep 2016</option>
+			<option value=" 6">wk  6 w/c 26 Sep 2016</option>
+			<option value=" 7">wk  7 w/c 03 Oct 2016</option>
+			<option value=" 8">wk  8 w/c 10 Oct 2016</option>
+			<option value=" 9">wk  9 w/c 17 Oct 2016</option>
+			<option value=" 10">wk  10 w/c 24 Oct 2016</option>
+			<option value=" 11">wk  11 w/c 31 Oct 2016</option>
+			<option value=" 12">wk  12 w/c 07 Nov 2016</option>
+			<option value=" 13">wk  13 w/c 14 Nov 2016</option>
+			<option value=" 14">wk  14 w/c 21 Nov 2016</option>
+			<option value=" 15">wk  15 w/c 28 Nov 2016</option>
+			<option value=" 16">wk  16 w/c 05 Dec 2016</option>
+			<option value=" 17">wk  17 w/c 12 Dec 2016</option>
+			<option value=" 18">wk  18 w/c 19 Dec 2016</option>
+			<option value=" 19">wk  19 w/c 26 Dec 2016</option>
+			<option value=" 20">wk  20 w/c 02 Jan 2017</option>
+			<option value=" 21">wk  21 w/c 09 Jan 2017</option>
+			<option value=" 22">wk  22 w/c 16 Jan 2017</option>
+			<option value=" 23">wk  23 w/c 23 Jan 2017</option>
+			<option value=" 24">wk  24 w/c 30 Jan 2017</option>
+			<option value=" 25">wk  25 w/c 06 Feb 2017</option>
+			<option value=" 26">wk  26 w/c 13 Feb 2017</option>
+			<option value=" 27">wk  27 w/c 20 Feb 2017</option>
+			<option value=" 28">wk  28 w/c 27 Feb 2017</option>
+			<option value=" 29">wk  29 w/c 06 Mar 2017</option>
+			<option value=" 30">wk  30 w/c 13 Mar 2017</option>
+			<option value=" 31">wk  31 w/c 20 Mar 2017</option>
+			<option value=" 32">wk  32 w/c 27 Mar 2017</option>
+			<option value=" 33">wk  33 w/c 03 Apr 2017</option>
+			<option value=" 34">wk  34 w/c 10 Apr 2017</option>
+			<option value=" 35">wk  35 w/c 17 Apr 2017</option>
+			<option value=" 36">wk  36 w/c 24 Apr 2017</option>
+			<option value=" 37">wk  37 w/c 01 May 2017</option>
+			<option value=" 38">wk  38 w/c 08 May 2017</option>
+			<option value=" 39">wk  39 w/c 15 May 2017</option>
+			<option value=" 40">wk  40 w/c 22 May 2017</option>
+			<option value=" 41">wk  41 w/c 29 May 2017</option>
+			<option value=" 42">wk  42 w/c 05 Jun 2017</option>
+			<option value=" 43">wk  43 w/c 12 Jun 2017</option>
+			<option value=" 44">wk  44 w/c 19 Jun 2017</option>
+			<option value=" 45">wk  45 w/c 26 Jun 2017</option>
+			<option value=" 46">wk  46 w/c 03 Jul 2017</option>
+			<option value=" 47">wk  47 w/c 10 Jul 2017</option>
+			<option value=" 48">wk  48 w/c 17 Jul 2017</option>
+			<option value=" 49">wk  49 w/c 24 Jul 2017</option>
+			<option value=" 50">wk  50 w/c 31 Jul 2017</option>
+			<option value=" 51">wk  51 w/c 07 Aug 2017</option>
+			<option value=" 52">wk  52 w/c 14 Aug 2017</option>
+
+		</select>
+                </td>
+                </tr>
+                </tbody></table>    
+                
+                
+            
+	</div>
+            
+            
+            <div id="pDays" style="width:100%;">
+		
+            <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel">
+                <span id="lDays" class="DepartmentLabel">Select Daysx(s):</span>
+                </td>
+                <td>
+                <select size="6" name="lbDays" id="lbDays" class="DepartmentFilter">
+			<option value="1-6">All Days</option>
+			<option selected="selected" value="1-5">Weekdays</option>
+			<option value="1">Monday</option>
+			<option value="2">Tuesday</option>
+			<option value="3">Wednesday</option>
+			<option value="4">Thursday</option>
+			<option value="5">Friday</option>
+			<option value="6">Saturday</option>
+
+		</select>
+                </td>
+                </tr>
+                </tbody></table>    
+                
+                
+            
+	</div>
+            <div id="pPeriod" style="width:100%;">
+		
+            <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel">
+                <span id="lPeriod" class="DepartmentLabel">Select Time Range:</span>
+                </td>
+                <td>
+                <select name="dlPeriod" onchange="javascript:setTimeout('__doPostBack(\'dlPeriod\',\'\')', 0)" id="dlPeriod" class="DepartmentFilter">
+			<option selected="selected" value="1-20">Working Day (08:00 - 18:00)</option>
+			<option value="1-28">All Day (08:00 - 22:00)</option>
+			<option value="1-8">Morning (08:00-12:00)</option>
+			<option value="9-20">Afternoon (12:00-18:00)</option>
+			<option value="21-28">Evening (18:00 - 22:00)</option>
+
+		</select>
+                </td>
+                </tr>
+                </tbody></table>    
+                
+                
+            
+	</div>
+            <div id="pType" style="width:100%;">
+		
+            <table class="DepartmentTable">
+                <tbody><tr>
+                <td class="DepartmentLabel">
+                <span id="lType" class="DepartmentLabel">Select Type Of Report:</span>
+                </td>
+                <td>
+                <select name="dlType" id="dlType" class="DepartmentFilter">
+			<option selected="selected" value="individual;swsurl;SWSCUST Object Individual">Grid Timetable</option>
+			<option value="TextSpreadsheet;swsurl;SWSCUST Object TextSpreadsheet">List Timetable</option>
+
+		</select>
+                </td>
+                </tr>
+                </tbody></table>    
+                
+                
+            
+	</div>
+            
+            
+            <div id="pButton" style="width:100%;">
+		
+                <input type="submit" name="bGetTimetable" value="View Timetable" onclick="return viewtimetableclick();" id="bGetTimetable" class="ViewTimetableButton">
+                <br>
+                <br>
+                
+	</div>
+            
+        
+</div>
+        
+     
+     <!-- INCLUDE the following if you want the Links to go DOWN the page -->   
+     
+         </td></tr></tbody></table> 
+        
+     <!-- END INCLUDE the following if you want the Links to go DOWN the page -->   
+     
+    </div>
