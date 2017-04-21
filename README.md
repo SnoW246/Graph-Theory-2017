@@ -5,7 +5,7 @@ Undergraduate 2017 Project for Graph Theory at Galway-Mayo Institute of Technolo
 
 #### Project Requirements
 1. The database should store information (Student groups, classrooms, lecturers, and work hours – just like the currently used timetabling system at GMIT.
-2. A document detailing the design of the database. (It should clearly state what data needs to be stored by atimetabling system, and how that data is to be represented in the database. This means that design choices about what data are represented as nodes, relationships, labels, relationship types or properties must clearly specified. It should also specify, and give examples of, Cypher queries for creating, retrieving, updating and deleting data.
+2. A document detailing the design of the database. (It should clearly state what data needs to be stored by a timetabling system, and how that data is to be represented in the database. This means that design choices about what data are represented as nodes, relationships, labels, relationship types or properties must be clearly specified. It should also specify, and give examples of, Cypher queries for creating, retrieving, updating and deleting data.
 3. A prototype Neo4j database following that design and using data from GMIT. (The data can be copied or scraped from GMIT’s timetabling website, or otherwise obtained.)
 4. Seperate section in the design document, outlining how the data have been obtained for the prototipe database.
 
@@ -16,7 +16,7 @@ Undergraduate 2017 Project for Graph Theory at Galway-Mayo Institute of Technolo
 4. Username: neo4j Password: neo4j (This may vary, as Neo4j might only ask for your personal informations).
 5. Further [guide](https://neo4j.com/developer/get-started/) and documentation for Neo4j can be found [here](https://neo4j.com/).
 
-# Storing information
+# 1. Storing information
 The folowwing data will be stored by Neo4j GMIT timetable database:
 - An Institute.
 - List of Departments in the Institute.
@@ -32,12 +32,12 @@ The folowwing data will be stored by Neo4j GMIT timetable database:
 
 Some of the adjustments to individual data are pure speculation sice the timetable could be used by every staff of the Institute, where students dont have an access to that data. e.g. I decided to use timeframe of 8am to 10pm for each day since those are the hours that the college is opened for, therefore it is only natural to speculate that staff members must be in the insitute carrying out some sort of work.
 
-# 1. Initial design of the database
+# 2. Initial design of the database
 I have created initial model before the database was created. The model includes basic relationships between the nodes.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25252159/ddc6c0aa-2613-11e7-9592-d6886ffb1cd9.png)
 
-The above model shows the following relationships that are included in the Neo4J database and go down in the tree hierarchy as follows:
+The above model shows the following data that will be represented in the Neo4J database and go down in the tree hierarchy as follows:
 1. Institute -- HAS --> Departments
 2. Department -- HAS --> Courses
 3. Course -- HAS --> Years
@@ -49,46 +49,73 @@ The above model shows the following relationships that are included in the Neo4J
 9. Rooms -- ON --> Days
 10. Days -- AT --> Timeframes
 
+I decided to represent most of the data by nodes in the Neo4j database as some of the relationships made me think it was necessary. 
+Below is a list of Nodes & Relationships: 
+#### Nodes - Institute, Department, Course, Year, Semester, Teacher, Module, Group, Room, Day, Timeframe
+#### Relationships - HAS, TEACH, IN, ON, AT
+
+My goal was to create a model with entities and appropriate relationships so that it would be easy to understand. The person using this model would also need to expand on it since data I have used in this project was only to match one part of Computing in Software Development Course in Galway-Mayo Institute of technology. The decisions I made about the nodes and the relationships were to ensure the the understanding of the model by person making timetable system.
+
+Not all of the data available on [GMIT Timetable System](http://timetable.gmit.ie/) website was used as the model I have created wouldn't be clear to understand and would include too much informations. A lot of infromations all related together, in one way or another, would result in advanced and difficult to understand overall graph therefore I have kept it as simple as possible.
+
+### Bellow are the Cypher queries used to create certain nodes and relationships between them:
+1. #### Create Institute node 
+   ###### CREATE (i:Institute {name:"GMIT"})
+2. #### Create Department node
+   ###### CREATE (dep:Department {name:"Computer Science & Applied Physics"})
+3. #### Create Course node
+   ###### CREATE (c:course {name:"Computing in Software Development"})
+4. ##### Create Year nodes
+   ###### CREATE (y1:year {name:"Year-1"}),
+   ###### (y2:year{name:"Year-2"}), 
+   ###### (y3:year{name:"Year-3"}), 
+   ###### (y4:year{name:"Year-4"})
+5. ##### Create Semester nodes
+   ###### CREATE (s1:semester {name:"S-1"}),
+   ###### (s2:semester {name:"S-2"}),
+   ###### (s3:semester {name:"S-3"}),
+   ###### (s4:semester {name:"S-4"}),
+   ###### (s5:semester {name:"S-5"}),
+   ###### (s6:semester {name:"S-6"}),
+   ###### (s7:semester {name:"S-7"}),
+   ###### (s8:semester {name:"S-8"})
+6. ##### Create Module nodes for semester 5 & 6 of year 3
+   ###### CREATE (m1:module {name:"Mobile Applications Development 2"}),
+   ###### (m2:module {name:"Database Management"}),
+   ###### (m3:module {name:"Server Side Rad"}),
+   ###### (m4:module {name:"Graph Theory"}),
+   ###### (m5:module {name:"Software Testing"}),
+   ###### (m6:module {name:"Profesional Practice in IT"}),
+   ###### (m7:module {name:"Graphics Programming"}),
+   ###### (m8:module {name:"Data Centric Rad"}),
+   ###### (m9:module {name:"Data Representation and Querying"}),
+   ###### (m10:module {name:"Object Oriented Programming"}),
+   ###### (m11:module {name:"Software Quality Management"}),
+   ###### (m12:module {name:"Operating Systems 1"})
+Now that the nodes are created the relationship can be applied. The create node queries can also create the relationship, but I decided to keep the queries simple in case something goes wrong and changes would have to be reverted or changed again.
+7. 
+8. 
+
+
+
+
+
+
+
+
 
 #### Create Commands for nodes in the Software Development course of 2016/2017 school year
-// Create Institute node
-CREATE (i:Institute {name:"GMIT"})
 
-// Create Department node
-CREATE (dep:Department {name:"Computer Science & Applied Physics"})
 
-// Create Course node
-CREATE (c:course {name:"Computing in Software Development"})
 
-// Create Year nodes
-CREATE (y1:year {name:"Year-1"}),
- (y2:year{name:"Year-2"}), 
- (y3:year{name:"Year-3"}), 
- (y4:year{name:"Year-4"})
 
-// Create Semester nodes
-CREATE (s1:semester {name:"S-1"}),
- (s2:semester {name:"S-2"}),
- (s3:semester {name:"S-3"}),
- (s4:semester {name:"S-4"}),
- (s5:semester {name:"S-5"}),
- (s6:semester {name:"S-6"}),
- (s7:semester {name:"S-7"}),
- (s8:semester {name:"S-8"})
 
-// Create Module nodes for semester 5 & 6 of year 3
-CREATE (m1:module {name:"Mobile Applications Development 2"}),
- (m2:module {name:"Database Management"}),
- (m3:module {name:"Server Side Rad"}),
- (m4:module {name:"Graph Theory"}),
- (m5:module {name:"Software Testing"}),
- (m6:module {name:"Profesional Practice in IT"}),
- (m7:module {name:"Graphics Programming"}),
- (m8:module {name:"Data Centric Rad"}),
- (m9:module {name:"Data Representation and Querying"}),
- (m10:module {name:"Object Oriented Programming"}),
- (m11:module {name:"Software Quality Management"}),
- (m12:module {name:"Operating Systems 1"})
+
+
+
+
+
+
 
 // Create Lecturer nodes
 CREATE (l1:lecturer {name:"Deirdre O'Donovan"}),
