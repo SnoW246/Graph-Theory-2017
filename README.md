@@ -237,6 +237,7 @@ Now that the model is finalised and aim is more clear, I created more nodes and 
    ###### MATCH (m:module), (r:room) WHERE m.name = "Mobile Applications Development 2" AND r.name = "PF18" CREATE (m)-[rel:IN]->(r)
    ###### MATCH (m:module), (r:room) WHERE m.name = "Server Side Rad" AND r.name = "436 CR5" CREATE (m)-[rel:IN]->(r)
    ###### MATCH (m:module), (r:room) WHERE m.name = "Graph Theory" AND r.name = "208" CREATE (m)-[rel:IN]->(r)
+   Decision about having "HAS" relationship between each module and individual rooms wasn't difficult to come up with, since every MODULE needs to HAVE a certain ROOM so it can be TAUGHT to GROUPS by a LECTURER. Since ROOM is a part of venue, each module require a venue.
 5. #### Create Group nodes
    ###### CREATE (g1:group {name:"Group-A"}),
    ###### (g2:group {name:"Group-B"}),
@@ -276,7 +277,9 @@ Now that the model is finalised and aim is more clear, I created more nodes and 
    ###### MATCH (g:group), (r:room) WHERE g.name = "Group-A" AND r.name = "436 CR5" CREATE (g)-[rel:IN]->(r)
    ###### MATCH (g:group), (r:room) WHERE g.name = "Group-B" AND r.name = "482 CR3" CREATE (g)-[rel:IN]->(r)
    Steps 3, 4, 5 & 6 will look like this in Neo4j graph when created:
-   ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246181/c48673b6-25fe-11e7-89f7-1e771fac092d.png)  
+   ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246181/c48673b6-25fe-11e7-89f7-1e771fac092d.png)
+   
+   As explained before, GROUPS are very important part of the relationship between MODULES & ROOMS as not always every group has the same venue, therfore representing GROUPS as separate nodes rather than as a relationship type. In the picture above we can see "IN" relationship representing the connection between MODULES & GROUPS. MODULE is taught IN room, where GROUP is also IN a room. ROOM also represents relationship between MODULE & individual GROUP as venues for each group can vary.
 7. #### Create Weekday nodes
    ###### CREATE (d1:day {name:"Monday"}),
    ###### (d2:day {name:"Tuesday"}),
@@ -298,6 +301,7 @@ Now that the model is finalised and aim is more clear, I created more nodes and 
    ###### (t12:timeframe {name:"19.00-20.00"}),
    ###### (t13:timeframe {name:"20.00-21.00"}),
    ###### (t14:timeframe {name:"21.00-22.00"})
+   Initially I wanted to create DAY nodes for each and individual WEEK, as well as TIMEFRAMES for each DAY. When I thought about the amount of nodes that would have to be created, amount of space it would have to take & amount of time it would take to run the queries on such a database I had to change that and figure out the best and logical way about it. Since previous model would lead to creation of 14x5x52 which is equal to 3640 individual nodes, the model needed to be changed. Reduction of amount of nodes necessary to keep the timetable informations was necessary. When I thought about what do they (WEEKS, DAYS, HOUR SLOTS) have in common, I got it instantly. They share timeframe which keeps repeating itself. It never changes, therefore there was no need to have WEEK nodes at all, only representation of one week, meaning weekdays with timeframes interconnected. This idea drastically reduced the amount of nodes from 3640 to only 70! Weeks repeat themselves and so does timetable. It is made once for a period of 1 semester. This idea made it alot easier to create relationships between DAYS and TIMEFRAMES as well as ROOMS & DAYS. Results can be seen in two of the following sections below.
 9. #### Create Relationship between Day and all Timeframes
    ###### MATCH (d:day),(t:timeframe) CREATE (d)-[r:AT]->(t)
    Steps 7, 8 & 9 will look like this in Neo4j graph when created:
@@ -311,6 +315,29 @@ Now the Neo4j database model is finished, matching the model selected to be deve
 ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246009/3e553bc4-25fe-11e7-847d-8a77d546e211.png)
 To be able to see the relationships in the Neo4J model, I have adjusted individual nodes, which result of can be seen below:
 ![alt tag](https://cloud.githubusercontent.com/assets/15648358/25246088/791dde46-25fe-11e7-9db4-2919711ce1f0.png)
+
+# 5. Conclusion
+The model is not perfect and certainly not finished. There is need of complete insertion of all data for every department and coresponding course within each department, necessary lecturers and modules, full list of rooms and individual groups if needed.
+
+The model is in need of properties for individual nodes which would be included with insertion of the missing data, as well as in need of relationship properties. Properties are a good way to keep a track availability of different venues and to make sure that appropriate size of room is acomodated for individual group. The model gives flexibility to add necessary data to individual liking or need. Example of a query to look for free room for a group on friday noon, with capacity of at least 70 could look something like this when model could look something like this: 
+##### MATCH (r:room), (d:day), (t:timeframe), (r)-[rel:ON]->(d), (d)-[rel:AT]->(t), WHERE (r {venue: true}, {capacity => 50}), (d {name = "Friday"}, {venue: true}) AND (t {name = "12.00-13.00"}, {venue: true})
+I am relatively new to Cypher Query Language for Neo4j but I believe that my model can be used as a representation of the timetabling system, where if the model was fully finished to accomodate needs of an institute then it could help to resolve issues with current timetabling system.
+
+### Sample Cypher queryies:
+- #### Create Node:
+  ###### CREATE (g4:group {name:"Group-D"})
+- #### Create Relationship
+  ###### MATCH (g:group), (r:room) WHERE g.name = "Group-D" CREATE (g)-[rel:IN]->(r)
+- #### Delete Node:
+  ###### MATCH (g:group {name:"Group-D"}) DELETE g
+- #### Delete Relationship:
+  ###### MATCH (s)-[rel:HAS]->(m) WHERE s.name = "S-6" AND m.name = "Graphics Programming" DELETE rel
+- #### Delete Property:
+  ###### MATCH (r {name:"room"}) SET r.name = NULL RETURN r
+- #### Update Relationship:
+  ###### MATCH (t:teacher {name:"Ian McLoughlin"})-[rel:LIKE]->(m:module {name:"Graph Theory"}) CREATE (t)-[rel2:TEACH]->(m) SET rel2 = rel WITH rel DELETE rel
+- #### Update Property: 
+  ###### MATCH (r {name:"room"}) SET r.venue = true AND r.capacity = 22 RETURN r
 ---
 # 4. How data was obtained
 Data was obtained from GMIT official website. Here are the steps on how they were acquired:
